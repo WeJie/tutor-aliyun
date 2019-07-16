@@ -4,6 +4,9 @@ import os
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
+templates = os.path.join(HERE, "templates")
+
+
 def patches():
     all_patches = {}
     for path in glob(os.path.join(HERE, "patches", "*")):
