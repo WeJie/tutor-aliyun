@@ -1,0 +1,8 @@
+- op: replace
+  path: /spec/resources
+  value:
+    requests:
+      storage: 20Gi
+- op: add
+  path: /spec/storageClassName
+  value: alicloud-disk-available

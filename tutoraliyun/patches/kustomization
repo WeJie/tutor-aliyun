@@ -1,0 +1,21 @@
+patchesJson6902:
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: elasticsearch
+  path: aliyun-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: mongodb
+  path: aliyun-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: mysql
+  path: aliyun-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: rabbitmq
+  path: aliyun-volumes-patch.yml
