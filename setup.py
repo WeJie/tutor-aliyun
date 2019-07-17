@@ -11,7 +11,7 @@ with io.open(os.path.join(here, "README.rst"), "rt", encoding="utf8") as f:
 setup(
     name="tutor-aliyun",
     version="0.0.2",
-    url="",
+    url="https://github.com/WeJie/tutor-aliyun",
     project_urls={
         "Documentation": "",
         "Code": "https://github.com/WeJie/tutor-aliyun",
@@ -19,8 +19,8 @@ setup(
         "Community": "",
     },
     license="AGPLv3",
-    author="",
-    author_email="",
+    author="weijie",
+    author_email="wejie00@foxmail.com",
     description="",
     long_description=readme,
     packages=["tutoraliyun"],
