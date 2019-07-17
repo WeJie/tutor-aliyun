@@ -19,3 +19,8 @@ patchesJson6902:
     kind: PersistentVolumeClaim
     name: rabbitmq
   path: plugins/aliyun/apps/aliyun-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: minio
+  path: plugins/aliyun/apps/aliyun-volumes-patch.yml
