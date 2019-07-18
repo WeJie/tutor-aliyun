@@ -11,7 +11,7 @@ This plugin requires tutor>=3.6.0. Also, you should have installed tutor from so
 
 ::
 
-    pip install . 
+    pip install tutor-aliyun
 
 Then, to enable this plugin, run::
 
@@ -26,7 +26,7 @@ Then deploy to k8s cluster::
     tutor k8s quickstart 
 
 
-Check if kustomization.yml file is right.
-```
-kubectl kustomize "$(tutor config printroot)/env"
-```
+Check if kustomization.yml file is right.::
+
+    kubectl kustomize "$(tutor config printroot)/env"
+
