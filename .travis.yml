@@ -3,6 +3,10 @@ language: python
 python:
   - 3.5
 
+script:
+  - pip install -U twine
+  - python setup.py sdist
+
 deploy:
   provider: pypi
   user: weijie
