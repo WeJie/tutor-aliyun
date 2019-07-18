@@ -10,7 +10,7 @@ with io.open(os.path.join(here, "README.rst"), "rt", encoding="utf8") as f:
 
 setup(
     name="tutor-aliyun",
-    version="0.0.2",
+    version="0.0.3",
     url="https://github.com/WeJie/tutor-aliyun",
     project_urls={
         "Documentation": "https://github.com/WeJie/tutor-aliyun",
