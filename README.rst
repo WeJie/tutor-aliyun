@@ -1,3 +1,6 @@
+.. image:: https://badge.fury.io/py/tutor-aliyun.svg
+    :target: https://pypi.org/project/tutor-aliyun/
+
 Aliyun plugin for `Tutor <https://docs.tutor.overhang.io>`_
 ============================================================
 
