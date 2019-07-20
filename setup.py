@@ -10,7 +10,7 @@ with io.open(os.path.join(here, "README.rst"), "rt", encoding="utf8") as f:
 
 setup(
     name="tutor-aliyun",
-    version="0.0.3",
+    version="0.0.7",
     url="https://github.com/WeJie/tutor-aliyun",
     project_urls={
         "Documentation": "https://github.com/WeJie/tutor-aliyun",
@@ -25,6 +25,7 @@ setup(
     long_description=readme,
     packages=["tutoraliyun"],
     include_package_data=True,
+    install_requires=["tutor-openedx"],
     python_requires=">=3.5",
     entry_points={"tutor.plugin.v0": ["aliyun = tutoraliyun.plugin"]},
     classifiers=[
