@@ -28,6 +28,8 @@ Then deploy to k8s cluster::
 
     tutor k8s quickstart 
 
+Set true to ALIYUN_USE_NAS_STORAGE in config.yml, if you want to use NAS(Network Attached Storage)::
+    ALIYUN_USE_NAS_STORAGE: true
 
 Check if kustomization.yml file is right.::
 

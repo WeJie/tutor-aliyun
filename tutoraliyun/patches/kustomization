@@ -1,3 +1,31 @@
+{% if ALIYUN_USE_NAS_STORAGE %}
+patchesJson6902:
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: elasticsearch
+  path: plugins/aliyun/apps/elasticsearch-nas-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: mongodb
+  path: plugins/aliyun/apps/mongodb-nas-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: mysql
+  path: plugins/aliyun/apps/mysql-nas-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: rabbitmq
+  path: plugins/aliyun/apps/rabbitmq-nas-volumes-patch.yml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: minio
+  path: plugins/aliyun/apps/minio-nas-volumes-patch.yml
+{% else %}
 patchesJson6902:
 - target:
     version: v1
@@ -24,3 +52,4 @@ patchesJson6902:
     kind: PersistentVolumeClaim
     name: minio
   path: plugins/aliyun/apps/aliyun-volumes-patch.yml
+{% endif %}

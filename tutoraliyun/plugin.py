@@ -7,6 +7,15 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 templates = os.path.join(HERE, "templates")
 
 
+config = {
+    "add": {
+        "USE_NAS_STORAGE": False,
+    },
+}
+
+
+
+
 def patches():
     all_patches = {}
     for path in glob(os.path.join(HERE, "patches", "*")):

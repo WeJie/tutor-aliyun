@@ -1,0 +1,139 @@
+{% if ALIYUN_USE_NAS_STORAGE %}
+{% if ACTIVATE_ELASTICSEARCH %}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ K8S_NAMESPACE }}-elasticsearch
+  labels:
+    alicloud-pvname: {{ K8S_NAMESPACE }}-elasticsearch
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nas
+  flexVolume:
+    driver: "alicloud/nas"
+    options:
+      server: "26f354a8a9-bwy43.cn-shenzhen.nas.aliyuncs.com"
+      path: "/{{ K8S_NAMESPACE }}/elasticsearch/"
+      vers: "4.0"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: elasticsearch
+    namespace: {{ K8S_NAMESPACE }}
+  persistentVolumeReclaimPolicy: Delete
+{% endif %}
+
+{% if ACTIVATE_MONGODB %}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ K8S_NAMESPACE }}-mongodb
+  labels:
+    alicloud-pvname: {{ K8S_NAMESPACE }}-mongodb
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nas
+  flexVolume:
+    driver: "alicloud/nas"
+    options:
+      server: "26f354a8a9-bwy43.cn-shenzhen.nas.aliyuncs.com"
+      path: "/{{ K8S_NAMESPACE }}/mongodb/data/db"
+      vers: "4.0"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: mongodb
+    namespace: {{ K8S_NAMESPACE }}
+  persistentVolumeReclaimPolicy: Delete
+{% endif %}
+
+{% if ACTIVATE_MYSQL %}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ K8S_NAMESPACE }}-mysql
+  labels:
+    alicloud-pvname: {{ K8S_NAMESPACE }}-mysql
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nas
+  flexVolume:
+    driver: "alicloud/nas"
+    options:
+      server: "26f354a8a9-bwy43.cn-shenzhen.nas.aliyuncs.com"
+      path: "/{{ K8S_NAMESPACE }}/mysql"
+      vers: "4.0"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: mysql
+    namespace: {{ K8S_NAMESPACE }}
+  persistentVolumeReclaimPolicy: Delete
+{% endif %}
+
+{% if ACTIVATE_RABBITMQ %}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ K8S_NAMESPACE }}-rabbitmq
+  labels:
+    alicloud-pvname: {{ K8S_NAMESPACE }}-rabbitmq
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nas
+  flexVolume:
+    driver: "alicloud/nas"
+    options:
+      server: "26f354a8a9-bwy43.cn-shenzhen.nas.aliyuncs.com"
+      path: "/{{ K8S_NAMESPACE }}/rabbitmq"
+      vers: "4.0"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: rabbitmq
+    namespace: {{ K8S_NAMESPACE }}
+  persistentVolumeReclaimPolicy: Delete
+{% endif %}
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ K8S_NAMESPACE }}-minio
+  labels:
+    alicloud-pvname: {{ K8S_NAMESPACE }}-minio
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nas
+  flexVolume:
+    driver: "alicloud/nas"
+    options:
+      server: "26f354a8a9-bwy43.cn-shenzhen.nas.aliyuncs.com"
+      path: "/{{ K8S_NAMESPACE }}/minio"
+      vers: "4.0"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: minio
+    namespace: {{ K8S_NAMESPACE }}
+  persistentVolumeReclaimPolicy: Delete
+{% endif %}

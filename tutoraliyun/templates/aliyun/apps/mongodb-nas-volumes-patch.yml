@@ -1,0 +1,7 @@
+- op: add
+  path: /spec/storageClassName
+  value: nas
+- op: add
+  path: /spec/volumeName
+  value: {{ K8S_NAMESPACE }}-mongodb
+
